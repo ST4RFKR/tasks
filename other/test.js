@@ -1,14 +1,13 @@
-function debounce(fn, delay) {
-  let timerId;
+function delay(ms) {
+  // ваш код
 
-  return function () {
-    clearTimeout(timerId);
-    timerId = setTimeout(() => fn(), delay);
-  };
+  return new Promise((res, req) => {
+    setTimeout(() => {
+      res();
+    }, ms);
+  });
 }
 
-const debouncedLog = debounce(() => {
-  console.log("search");
-}, 500);
-
-debouncedLog();
+delay(1000).then(() => {
+  console.log("1 second");
+});

@@ -3,18 +3,15 @@
  * @return {string}
  */
 var removeStars = function (s) {
-    const res = new Array(s.length);
-    let idx = 0;
+  const stack = [];
 
-    for (let i = 0; i < s.length; i++) {
-        if (s[i] === '*') {
-            idx--;
-        } else {
-            res[idx] = s[i];
-            idx++;
-        }
+  for (const ch of s) {
+    if (ch === "*") {
+      stack.pop(ch);
+    } else {
+      stack.push(ch);
     }
+  }
 
-    return res.slice(0, idx).join('');
+  return stack.join("");
 };
-console.log(removeStars("leet**cod*e"));

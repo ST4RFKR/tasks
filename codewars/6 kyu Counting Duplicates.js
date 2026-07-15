@@ -37,3 +37,21 @@ function duplicateCount(text) {
 
   return count;
 }
+
+function duplicateCount(text){
+  const map = new Map();
+  const result = [];
+  const normalizeText = text.toLowerCase();
+  
+  for(const ch of normalizeText){
+    map.set(ch, (map.get(ch) || 0) + 1)
+  }
+  
+  for(const [key, value] of map){
+    if (value > 1){
+      result.push(key)
+    }
+  }
+  
+  return result.length
+}

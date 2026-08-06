@@ -1,3 +1,5 @@
 {
-  "liveServer.settings.port": 5501
+  "liveServer.settings.port": 5501,
+  "application.experimental.rendererProfiling": false,
+  "workbench.colorTheme": "After Dark"
 }
